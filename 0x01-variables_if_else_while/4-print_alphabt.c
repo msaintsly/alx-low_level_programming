@@ -15,11 +15,11 @@ int main(void)
 	e = 'e';
 	q = 'q';
 
-	for (lower_case = 'a';lower_case <= 'z'; lower_case++)
+	for (lower_case = 'a'; lower_case <= 'z'; lower_case++)
 		if (low != e && low !=q)
 			putchar (lower_case)
+
+	putchar('\n');
+
+	return (0);
 }
-putchar('\n');
-
-return (0);
-
