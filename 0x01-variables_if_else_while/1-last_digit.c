@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 /**
- * main - This program will assign a random number to the variable n
- *
+ * main - Program for 1-last_digit.c
+ * 
  * Return: Always 0 (Successful)
  */
 int main(void)
