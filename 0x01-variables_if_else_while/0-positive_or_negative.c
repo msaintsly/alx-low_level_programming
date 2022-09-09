@@ -2,7 +2,10 @@
 
 #include <time.h>
 
-/* more headers goes there */
+/**
+ * File: 0-positive_or_negative.c
+ *
+ */
 
 /*main - Printing numbers and showing whether it positive, negetive or zero.
  *
