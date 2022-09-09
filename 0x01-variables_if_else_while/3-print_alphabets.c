@@ -1,18 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
- * main - Alphabets that print in lowercase
+ * main - Entry point
  *
  * Return: Always 0 (successful)
  */
+
 int main(void)
 {
-	char lower_case
-	for (lower_case = 'a'; lower_case <= 'z'; lower_case++)
-			putchar (lower_case);
-	for (lower_case = 'A'; LOWER_CASE <= 'Z'; lower_case++
-			putchar (lower_case);
-		
+
+	char love;
+
+	for (love = 'a'; love <= 'z'; love++)
+		putchar (love);
+	for (love = 'A'; love <= 'Z'; love++)
+		putchar (love);
 	putchar ('\n');
 	return (0);
 }
