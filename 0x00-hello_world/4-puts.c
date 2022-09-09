@@ -1,10 +1,9 @@
-#include <studio.h>
+#include <stdio.h>
+
 /**
- * main - print the string in the put function
+ * main - printing in the put function
  *
- * Description: using the main function
- * this program prints "Programming is like building a multilingual puzzle
- * Return: 0
+ * Return: 0 (it is successful)
  */
 int main(void)
 {
