@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - program that prints many sizes
+ * main - print sizes of many var text
  *
- * Return: when 0 (it is successful)
+ * Return: Always 0 (it is successful)
  */
 int main(void)
 {
@@ -16,7 +16,7 @@ int main(void)
 	printf("Size of a char: %ld byte(s)\n", sizeof(a));
 	printf("Size of an int: %ld byte(s)\n", sizeof(b));
 	printf("Size of a long int: %ld byte(s)\n", sizeof(c));
-	printf("Size of a long long int: %ld byte(s)\n" sizeof(d));
-	printf("Size of a float: %ld byte(s)\n" sizeof(e));
+	printf("Size of a long long int: %ld byte(s)\n", sizeof(d));
+	printf("Size of a float: %ld byte(s)\n", sizeof(e));
 	return (0);
 }
