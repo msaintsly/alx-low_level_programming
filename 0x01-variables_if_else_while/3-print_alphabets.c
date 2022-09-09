@@ -13,7 +13,7 @@ int main(void)
 
 	char joy;
 
-	for (joy = 'a';joy <= 'z'; joy++)
+	for (joy = 'a'; joy <= 'z'; joy++)
 		putchar (joy);
 	for joy = 'A'; joy <= 'Z'; joy++)
 		putchar (joy);
