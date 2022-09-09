@@ -11,12 +11,12 @@
 int main(void)
 {
 
-	char love;
+	char joy;
 
-	for (love = 'a'; love <= 'z'; love++)
-		putchar (love);
-	for (love = 'A'; love <= 'Z'; love++)
-		putchar (love);
+	for (joy = 'a';joy <= 'z'; joy++)
+		putchar (joy);
+	for joy = 'A'; joy <= 'Z'; joy++)
+		putchar (joy);
 	putchar ('\n');
 	return (0);
 }
