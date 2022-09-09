@@ -6,7 +6,7 @@
 
 /*main - Printing numbers and showing whether it positive, negetive or zero.
  *
- * Return: Always 0.
+ * Return: Always 0 (it is successful)
  */
 
 int main(void)
