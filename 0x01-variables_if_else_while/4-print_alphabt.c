@@ -16,7 +16,7 @@ int main(void)
 	q = 'q';
 
 	for (lower_case = 'a'; lower_case <= 'z'; lower_case++)
-		if (low != e && low !=q)
+		if (low != e && low != q)
 			putchar (lower_case)
 
 	putchar('\n');
