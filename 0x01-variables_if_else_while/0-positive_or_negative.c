@@ -1,13 +1,9 @@
-/**
- * File: 0-positive_or_negative.c
- *
- */
-
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
 
-/*main - Printing numbers and showing whether it positive, negetive or zero.
+/**
+ * main - Printing numbers and showing whether it positive, negetive or zero.
  *
  * Return: Always 0 (successful)
  */
