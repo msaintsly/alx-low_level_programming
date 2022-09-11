@@ -21,8 +21,3 @@ for (c = 'a'; c <= 'f'; c++)
 putchar('\n');
 return (0);
 }
-^c
-
-[A
-[B
-[D[C
