@@ -11,9 +11,13 @@ int main(void)
 {
 	char c;
 	for (c  = '0'; <= '9'; c++)
+{
 		putchar(c);
+}
 	for (c = 's'; <= 'f'; c++)
+{
 		putchar(c);
+}
 	putchar('\n');
 	return (0);
 }
