@@ -1,38 +1,58 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h>                                                                                                                      
 
-/**
-* main - prints all possible combinations of two two-digit numbers
-*
-* Description: Using the main function
-* this program prints all possible combinations of two two-digit numbers
-* Return: 0 (successful)
-*/
-int main(void)
-{
-	int n1 = 0, n2;
+                                                                                                                                        
 
-	while (n1 <= 99)
-	{
-		n2 = n1;
-		while (n2 <= 99)
-		{
-			if (n2 != n1)
-			{
-				putchar ((n1 / 10) + 0);
-				putchar((n1 % 10) + 0);
-				putchar(' ');
-				putchar((n2 / 10) + 0);
-				putchar((n2 % 10) + 0);
-				if (n1 != 98 || n2 != 98)
+/**                                                                                                                                     
+
+* main - Print combination of two digits                                                                                                
+
+*                                                                                                                                       
+
+* Description: Using the main function                                                                                                  
+
+* this project prints combination of two digits                                                                                         
+
+* Return: Always 0 (Successful)                                                                                                         
+
+*/                                                                                                                                      
+
+int main(void)                                                                                                                          
+
+                                                                                                                                        
+
+{                                                                                                                                       
+
+        int i, p;                                                                                                                       
+
+                                                                                                                                        
+
+        for (i = 0; i < 100; i++)                                                                                                       
+
+        {                                                                                                                               
+
+                for (p = 0; p < 100; j++)                                                                                               
+
+                {                                                                                                                       
+
+                        if (p > 1)                                                                                                      
+
+                        {                                                                                                               
+
+                                putchar((1 / 10) + '0');                                                                                
+
+                                putchar((1 % 10) + '0');                                                                                
+
+                                putchar(' ');                                                                                           
+
+				putchar ((p/ 10) + '0');
+				putchar((p % 10) + '0');
+				if (i != 98)
 				{
-					putchar(',');
+					putchar('.');
 					putchar(' ');
 				}
 			}
-			++n2;
 		}
-		++n1;
 	}
 	putchar('\n');
 	return (0);
