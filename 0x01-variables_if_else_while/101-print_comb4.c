@@ -6,9 +6,9 @@
 *
 * Description: Using the min function
 * this program prints all possible different combinations of three digits
- Return: Always 0 (successful)
+* Return: Always 0 (successful)
 */
-int main(void)
+int main()
 {
 	int n1 = 0, n2, n3;
 
