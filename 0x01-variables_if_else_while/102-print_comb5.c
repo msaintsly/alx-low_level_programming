@@ -11,7 +11,7 @@ int main(void)
 {
 	int i, p;
 
-	for (i = 0; i < 100 i++)
+	for (i = 0; i < 100; i++)
 	{
 		for (p=0; p < 100; p++)
 		{
@@ -31,7 +31,7 @@ int main(void)
 			}
 		
 		}
-		putchar('\n')
+		putchar('\n');
 		return (0)
 
 }
