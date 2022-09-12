@@ -17,11 +17,11 @@ int main(void)
 		{
 			if (p > i)
 			{
-				putchar((i / 100) + '0');
-				putchar((i % 100) + '0');
+				putchar((i / 100) + 48);
+				putchar((i % 100) + 48);
 				putchar(' ');
-				putchar((p / 100) + '0');
-				putchar((p % 100) + '0');
+				putchar((p / 100) + 48);
+				putchar((p % 100) + 48);
 				if (i != 98)
 				{
 					putchar(',');
