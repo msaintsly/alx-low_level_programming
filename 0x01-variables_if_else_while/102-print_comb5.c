@@ -1,27 +1,15 @@
-#include <stdio.h>                                                                                                                      
+#include <stdio.>             
 
-                                                                                                                                        
+/**
+* main - Print combination of two digits
+*                                                                               
+* Description: Using the main function
+* this project prints combination of two digits                       
+* Return: Always 0 (Successful)                                                 
+*/                                                                              
 
-/**                                                                                                                                     
-
-* main - Print combination of two digits                                                                                                
-
-*                                                                                                                                       
-
-* Description: Using the main function                                                                                                  
-
-* this project prints combination of two digits                                                                                         
-
-* Return: Always 0 (Successful)                                                                                                         
-
-*/                                                                                                                                      
-
-int main(void)                                                                                                                          
-
-                                                                                                                                        
-
-{                                                                                                                                       
-
+int main(void)
+{                                                                               
         int i, p;                                                                                                                       
 
                                                                                                                                         
