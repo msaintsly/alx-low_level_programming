@@ -8,7 +8,7 @@
 * this program prints all possible different combinations of three digits
  Return: Always 0 (successful)
 */
-int main (void)
+int main(void)
 {
 	int n1 = 0, n2, n3;
 
@@ -16,7 +16,7 @@ int main (void)
 	{
 		n2 = 0;
 		while (n2 <= 9)
-		{ 
+		{
 			n3 = 0;
 			while (n3 <= 9)
 			{
