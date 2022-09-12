@@ -13,7 +13,7 @@ int main(void)
 
 	for (i = 0; i < 100; i++)
 	{
-		for (p=0; p < 100; p++)
+		for (p = 0; p < 100; p++)
 		{
 			if (p > i)
 			{
@@ -29,7 +29,7 @@ int main(void)
 				}
 
 			}
-		
+
 		}
 	}
 	putchar('\n');
