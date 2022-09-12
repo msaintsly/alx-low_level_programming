@@ -1,47 +1,37 @@
-#include <stdio.>             
+#include <stdio.h>
 
 /**
-* main - Print combination of two digits
-*                                                                               
-* Description: Using the main function
-* this project prints combination of two digits                       
-* Return: Always 0 (Successful)                                                 
-*/                                                                              
-
+ * main - Prints possible combinations of two two-digit numbers
+ *
+ * Description: Using the main function
+ * this program prints all possible combinations of two two-digit numbers
+ * Return: Always 0 (successful)
+ */
 int main(void)
-{                                                                               
-        int i, p;                                                                                                                       
+{
+	int i, p;
 
-                                                                                                                                        
-
-        for (i = 0; i < 100; i++)                                                                                                       
-
-        {                                                                                                                               
-
-                for (p = 0; p < 100; p++)                                                                                               
-
-                {                                                                                                                       
-
-                        if (p > 1)                                                                                                      
-
-                        {                                                                                                               
-
-                                putchar((i / 10) + '0');                                                                                
-
-                                putchar((i % 10) + '0');                                                                                
-
-                                putchar(' ');                                                                                           
-
-				putchar((p / 10) + '0');
-				putchar((p % 10) + '0');
+	for (i = 0; i < 100 i++)
+	{
+		for (p=0; p < 100; p++)
+		{
+			if (p > i)
+			{
+				putchar((i / 100) + '0');
+				putchar((i % 100) + '0');
+				putchar(' ');
+				putchar((p / 100) + '0');
+				putchar((p % 100) + '0');
 				if (i != 98)
 				{
-					putchar('.');
+					putchar(',');
 					putchar(' ');
 				}
+
 			}
+		
 		}
-	}
-	putchar('\n');
-	return (0);
+		putchar('\n')
+		return (0)
+
 }
