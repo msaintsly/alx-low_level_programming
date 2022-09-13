@@ -1,6 +1,6 @@
 #ifndef MAIN_H_INCLUDE
 #define MAIN_H_INCLUDE
-int _putchar(char)
+int _putchar(char);
 void print_alphabet (void);
 void print_alphabet_x10(void);
 int _islower(int c);
