@@ -1,29 +1,32 @@
 #include "main.h"
 
 /**
- * rev_string - Reverses a string
- * @s: The string to be modified
- *
- * Return: void
- */
+  * rev_string - Reverses a string
+  * @s: The string to be modified
+  *
+  * Return: void
+  */
 void rev_string(char *s)
 {
-	"sam" -> "mas"
-	char tmp;
-	int i, length1, length2;
+	int i, c, k;
+	char *a, aux;
 
-	length1 = 0;
-	length2 = 0;
+	a = s;
 
-	while (s[length1 ! = '\0')
-	length1++;
-
-	length2 = length1 - 1;
-	for (i = 0; i < length1 / 2; i ++)
+	while (s[c] != '\0')
 	{
-		tmp = s[i];
-		s[i] = s[stregth2];
-		s[length2] = temp;
-		length2 -= 1;
+		c++;
 	}
-}
+
+	for (k = 1; k < c; k++)
+	{
+		a++;
+	}
+
+	for (i = 0; i < (c / 2); i++)
+	{
+		aux = s[i];
+		s[i] = *a;
+		*a = aux;
+		a--;
+	}
