@@ -30,3 +30,4 @@ void rev_string(char *s)
 		*a = aux;
 		a--;
 	}
+}
