@@ -1,11 +1,12 @@
 #include <stdio.h>
-/**
- * main - print the num of the file program use compiled from
- * Return: Always 0.
- */
 
+/**
+ * main - prints the name of the file
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-    printf("%s\n", ___FILE___);
-    return (0);
+	printf("%s\n", __FILE__);
+	return (0);
 }
