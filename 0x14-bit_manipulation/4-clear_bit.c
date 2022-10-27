@@ -3,7 +3,6 @@
 #include "main.h"
 
 /**
-  *
   * clear_bit - Sets the value of a bit to 0 at a given index
   * @n: The number to modify
   * @index: The index in the number to modify
