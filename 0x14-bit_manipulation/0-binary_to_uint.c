@@ -1,14 +1,47 @@
-#ifndef _BIT_MANIP_
-#define _BIT_MANIP_
+#include <stdlib.h>
+#include <stdio.h>
+#include "holberton.h"
 
-int _strlen(const char *s);
-unsigned int binary_to_uint(const char *b);
-int _putchar(char c);
-void print_binary(unsigned long int n);
-void _divide(unsigned long int n);
-int get_bit(unsigned long int n, unsigned int index);
-int set_bit(unsigned long int *n, unsigned int index);
-int clear_bit(unsigned long int *n, unsigned int index);
-unsigned int flip_bits(unsigned long int n, unsigned long int m);
+/**
+  * binary_to_uint - Converts a binary number to an unsigned int
+  * @b: The binary string to converts
+  *
+  * Return: The positive number converted from a binary
+  */
+unsigned int binary_to_uint(const char *b)
+{
+	unsigned int len = 0, count = 0, sum = 0;
 
-#endif
+	if (b == NULL)
+		return (0);
+
+	len = _strlen(b);
+	while (len--)
+	{
+		if (b[len] != 48 && b[len] != 49)
+			return (0);
+
+		if (b[len] == 49)
+			sum += 1 << count;
+
+		count++;
+	}
+
+	return (sum);
+}
+
+/**
+  * _strlen - Returns the length of a string
+  * @s: String to count
+  *
+  * Return: String length
+  */
+int _strlen(const char *s)
+{
+	int c = 0;
+
+	while (s[c])
+		c++;
+
+	return (c);
+}
