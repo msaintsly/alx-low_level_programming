@@ -35,7 +35,7 @@ void close_elf(int elf);
  *
  * Return: nothing
 */
-void check_if_elf(unsigned char *e_ident)
+void check_elf(unsigned char *e_ident)
 {
 	int index = 0;
 
@@ -294,12 +294,12 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
  *
  * Return: nothing
 */
-void close_file(int elf_file)
+void close_file(int elf)
 {
-	if (close(elf_file) == -1)
+	if (close(elf) == -1)
 	{
 		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %d\n", elf_file);
+			"Error: Can't close fd %d\n", elf );
 		exit(98);
 	}
 }
@@ -316,34 +316,33 @@ void close_file(int elf_file)
 */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	Elf64_Ehdr *elf;
-	int elf_file, read_file;
+	Elf64_Ehdr *header;
+	int o, r; 
 
-	elf_file = open(argv[1], O_RDONLY);
-	if (elf_file == -1)
+	o = open(argv[1], O_RDONLY);
+	if (o == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
 
-	elf = malloc(sizeof(Elf64_Ehdr));
-	if (elf == NULL)
+	header = malloc(sizeof(Elf64_Ehdr));
+	if (header == NULL)
 	{
-		close_file(elf_file);
-		free(elf);
+		close_elf(o);
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
 
-	read_file = read(elf_file, elf, sizeof(Elf64_Ehdr));
-	if (read_file == -1)
+	r = read(o,header, sizeof(Elf64_Ehdr));
+	if (r == -1)
 	{
-		free(elf);
-		close_file(elf_file);
+		free(header);
+		close_elf(o);
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
-	check_if_elf(elf->e_ident);
+	check_elf(header->e_ident);
 	printf("ELF Header:\n");
 	print_magic(elf->e_ident);
 	print_class(elf->e_ident);
@@ -351,9 +350,10 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	print_version(elf->e_ident);
 	print_osabi(elf->e_ident);
 	print_abi(elf->e_ident);
-	print_type(elf->e_type, elf->e_ident);
-	print_entry(elf->e_entry, elf->e_ident);
-	free(elf);
-	close_file(elf_file);
+	print_type(elf->e_type, header->e_ident);
+	print_entry(elf->e_entry, header->e_ident);
+
+	free(header);
+	close_elf(o);
 	return (0);
 }
