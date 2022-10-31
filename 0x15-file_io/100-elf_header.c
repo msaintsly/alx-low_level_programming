@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <elf.h>
 
-void chek_if_elf(unsigned char *e_ident);
+void elf(unsigned char *e_ident);
 void print_magic(unsigned char *e_ident);
 void print_class(unsigned char *e_ident);
 void print_data(unsigned char *e_ident);
