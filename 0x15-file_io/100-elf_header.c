@@ -1,22 +1,5 @@
 #include "main.h"
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <elf.h>
 
-void check_elf(unsigned char *e_ident);
-void print_magic(unsigned char *e_ident);
-void print_class(unsigned char *e_ident);
-void print_data(unsigned char *e_ident);
-void print_version(unsigned char *e_ident);
-void print_osabi(unsigned char *e_ident);
-void print_Abi(unsigned char *e_ident);
-void print_type(unsigned int e_type, unsigned char *e_ident);
-void print_entry(unsigned long int e_entry, unsigned char *e_ident);
-void close_elf(int elf);
 /*
  * e_ident[] - IDENTIFICATION INDEXES
  *
@@ -35,7 +18,7 @@ void close_elf(int elf);
  *
  * Return: nothing
 */
-void check_elf(unsigned char *e_ident)
+void check_if_elf(unsigned char *e_ident)
 {
 	int index = 0;
 
@@ -294,12 +277,12 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
  *
  * Return: nothing
 */
-void close_file(int elf)
+void close_file(int elf_file)
 {
-	if (close(elf) == -1)
+	if (close(elf_file) == -1)
 	{
 		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %d\n", elf );
+			"Error: Can't close fd %d\n", elf_file);
 		exit(98);
 	}
 }
@@ -316,33 +299,34 @@ void close_file(int elf)
 */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	Elf64_Ehdr *header;
-	int o, r; 
+	Elf64_Ehdr *elf;
+	int elf_file, read_file;
 
-	o = open(argv[1], O_RDONLY);
-	if (o == -1)
+	elf_file = open(argv[1], O_RDONLY);
+	if (elf_file == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
 
-	header = malloc(sizeof(Elf64_Ehdr));
-	if (header == NULL)
+	elf = malloc(sizeof(Elf64_Ehdr));
+	if (elf == NULL)
 	{
-		close_elf(o);
+		close_file(elf_file);
+		free(elf);
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
 
-	r = read(o,header, sizeof(Elf64_Ehdr));
-	if (r == -1)
+	read_file = read(elf_file, elf, sizeof(Elf64_Ehdr));
+	if (read_file == -1)
 	{
-		free(header);
-		close_elf(o);
+		free(elf);
+		close_file(elf_file);
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
-	check_elf(header->e_ident);
+	check_if_elf(elf->e_ident);
 	printf("ELF Header:\n");
 	print_magic(elf->e_ident);
 	print_class(elf->e_ident);
@@ -350,10 +334,9 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	print_version(elf->e_ident);
 	print_osabi(elf->e_ident);
 	print_abi(elf->e_ident);
-	print_type(elf->e_type, header->e_ident);
-	print_entry(elf->e_entry, header->e_ident);
-
-	free(header);
-	close_elf(o);
+	print_type(elf->e_type, elf->e_ident);
+	print_entry(elf->e_entry, elf->e_ident);
+	free(elf);
+	close_file(elf_file);
 	return (0);
 }
