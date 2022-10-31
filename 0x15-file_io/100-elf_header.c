@@ -1,22 +1,23 @@
-#include "main.h"
-#include <elf.h>
+#include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
+#include <elf.h>
 
-void check_elf(unsigned char *e_ident);
+void check_if_elf(unsigned char *e_ident)
 void print_magic(unsigned char *e_ident);
 void print_class(unsigned char *e_ident);
 void print_data(unsigned char *e_ident);
 void print_version(unsigned char *e_ident);
+void print_version(unsigned char *e_ident);
+void print_osabi(unsigned char *e_ident);
 void print_abi(unsigned char *e_ident);
-void print_asobi(unsigned char *e_ident);
-void type(unsigned int e_type, unsigned char *e_ident);
-void entry(unsigned long int e_entry, unsigned char *e_ident);
-void close_elf(int elf);
+void print_type(unsigned int e_type, unsigned char *e_ident);
+void print_entry(unsigned long int e_entry, unsigned char *e_ident);
+void close_file(int elf_file);
+
 
 /*
  * e_ident[] - IDENTIFICATION INDEXES
