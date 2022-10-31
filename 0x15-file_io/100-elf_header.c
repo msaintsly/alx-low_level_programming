@@ -78,7 +78,6 @@ void print_magic(unsigned char *e_ident)
 		else
 			printf(" "); /*space each number*/
 
-		index++;
 	}
 }
 
